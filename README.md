@@ -7,10 +7,14 @@
     - docker-compose.yml  
     `- node_modules:/usr/src/app/node_modules` はコメントアウトしておく
 2. イメージをビルド  
-`docker-compose build`  
+    ```
+    docker-compose build
+    ```
 3. create vite を実行  
-`docker-compose run --rm react yarn create vite`  
-※reactの部分はサービス名  
+    ```
+    docker-compose run --rm react yarn create vite
+    ```
+    ※reactの部分はサービス名  
 4. プロジェクト名を聞かれるがカレントディレクトリに作成するので「.」と回答  
     ```
     ? Project name:.
@@ -29,13 +33,13 @@
         Others
     ```
 
-6. バリアント聞かれるので、TypeScript + SWC を選ぶ  
+6. バリアント聞かれるので、JavaScript + SWC を選ぶ  
     ```
     ? Select a variant: › - Use arrow-keys. Return to submit.
         TypeScript
-    ❯   TypeScript + SWC
+        TypeScript + SWC
         JavaScript
-        JavaScript + SWC
+    ❯   JavaScript + SWC
     ```
 
 7. appフォルダ内にviteのファイルが作成されていることを確認
@@ -65,13 +69,21 @@ app > package.json > scripts > dev に`--host`を追記
 10. Dockerfile と docker-compose.yml のnode_modules関連のコメントアウトを取る
 
 11. もう一度イメージをビルドする  
-`docker-compose build`  
+    ```
+    docker-compose build
+    ```
 
 12. packageをインストール(node_modulesのvolumeにインストールされる)  
-`docker-compose run --rm react yarn install`  
+    ```
+    docker-compose run --rm react yarn install
+    ```
 
 13. コンテナを起動する  
-`docker compose up -d`  
+    ```
+    docker compose up -d
+    ```
 
 14. ブラウザからローカルホストにアクセス  
-`http://localhost:3000`  
+    ```
+    http://localhost:3000
+    ```
