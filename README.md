@@ -1,4 +1,4 @@
-# docker-vite-react-typescript
+# docker-vite-react
 
 ### 環境構築
 1. Dockerfile と docker-compose.yml を作成  
