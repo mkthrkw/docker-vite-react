@@ -11,7 +11,7 @@ services:
     tty: true
     # カレントディレクトリ内の`/app`のファイル・フォルダをコンテナにマウントします
     volumes:
-      - ./app:/usr/src/app
+      - ${HOST_DIR:-./app}:/usr/src/app
       - node_modules:/usr/src/app/node_modules   # Add after vite create
     # npmを使って起動する
     command: yarn dev # npm run devでも可
