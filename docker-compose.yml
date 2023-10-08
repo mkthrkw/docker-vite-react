@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  # サービス名はnode
+  react:
+    # ビルドコンテキストはカレントディレクトリ
+    build:
+      args:
+        - NODE_VER=${NODE_VER:-20-alpine3.17}
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    # カレントディレクトリ内の`/app`のファイル・フォルダをコンテナにマウントします
+    volumes:
+      - ./app:/usr/src/app
+      - node_modules:/usr/src/app/node_modules   # Add after vite create
+    # npmを使って起動する
+    command: yarn dev # npm run devでも可
+    ports:
+      # デフォルトの3000ポートを使う
+      - "${HOST_PORT:-3000}:3000"
+volumes:
+  node_modules:
