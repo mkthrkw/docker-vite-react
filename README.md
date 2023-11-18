@@ -12,7 +12,7 @@
     ```
 3. create vite を実行  
     ```
-    docker-compose run --rm react yarn create vite
+    docker-compose run --rm react npm create vite
     ```
     ※reactの部分はサービス名  
 4. プロジェクト名を聞かれるがカレントディレクトリに作成するので「.」と回答  
@@ -75,7 +75,7 @@ app > package.json > scripts > dev に`--host`を追記
 
 12. packageをインストール(node_modulesのvolumeにインストールされる)  
     ```
-    docker-compose run --rm react yarn install
+    docker-compose run --rm react npm install
     ```
 
 13. コンテナを起動する  
