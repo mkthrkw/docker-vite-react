@@ -14,9 +14,10 @@ services:
       - ${HOST_DIR:-./app}:/usr/src/app
       - node_modules:/usr/src/app/node_modules   # Add after vite create
     # npmを使って起動する
-    command: yarn dev # npm run devでも可
+    command: npm run dev   # yarn devでも可
     ports:
       # デフォルトの3000ポートを使う
       - "${HOST_PORT:-3000}:3000"
+      - "3001:3001"
 volumes:
   node_modules:
