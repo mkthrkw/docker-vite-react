@@ -33,7 +33,7 @@
         Others
     ```
 
-6. バリアント聞かれるので、JavaScript + SWC を選ぶ  
+6. バリアント聞かれるので、選ぶ  
     ```
     ? Select a variant: › - Use arrow-keys. Return to submit.
         TypeScript
